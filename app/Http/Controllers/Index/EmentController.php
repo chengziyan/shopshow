@@ -11,6 +11,7 @@ use App\Model\Order_info;
 use App\Model\Order_goods;
 use App\Model\Goods;
 use Illuminate\Support\Facades\DB;
+use App\Model\Collect;
 class EmentController extends Controller
 {
     public function ement(){
@@ -233,5 +234,21 @@ class EmentController extends Controller
             //验证失败
             echo "验证失败";
         }
+    }
+
+    //收藏
+    public function collect(){
+        $data = request()->all();
+        $data['uid'] = session('login')->id;
+        $res = Collect::where($data)->get();
+        $res = $res?$res->toArray():[];
+        if(count($res) > 0){
+            return json_encode(['code'=>0,'msg'=>'已有此收藏']);
+        }
+        $result = Collect::insert($data);
+        if($result){
+            return json_encode(['code'=>1,'msg'=>'收藏成功']);
+        }
+
     }
 }

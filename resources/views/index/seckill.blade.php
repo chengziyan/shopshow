@@ -48,7 +48,7 @@
 						</div>
 					</div>
 					<div class="product-collect">
-						<a href="javascript:;" id="star"><img src="/static/img/_/shi_heart.png" alt=""> 收藏</a>
+						<a href="javascript:void(0);" id="star"><img src="/static/img/_/shi_heart.png" alt=""> 收藏</a>
 					</div>
 				</div>
 				<div class="fr itemInfo-wrap">
@@ -183,7 +183,7 @@
                             <div class="fl">
 								<ul class="btn-choose unstyled">
 									<li>
-										<a href="#" class="sui-btn  btn-danger addshopcar" id="fva">收藏</a>
+										<a class="sui-btn  btn-danger addshopcar" id="fva">收藏1111</a>
 									</li>
 								</ul>
 							</div>
@@ -574,7 +574,7 @@
     <!--页面底部-->
     <script type="text/javascript" src="/static/js/plugins/jquery/jquery.min.js"></script>
 
-    @endsection
+
 <script>
     function cartdo(goods_id,buy_number){
         $.get('/cartdo',{goods_id:goods_id,buy_number:buy_number},function (res){
@@ -594,8 +594,18 @@
             }
         },'json')
     }
-    $('#fva').on('click',function(){
-        alert(1111)
-    })
+    $(document).on('click','#fva',function() {
+		var goods_id = "{{$goods->goods_id}}"
+		if(goods_id == ''){
+			alert('非法操作')
+		}
+		$.get('/collect',{goods_id:goods_id},function (res) {
+			if(res.code == 1){
+				alert(res.msg)
+			}else{
+				alert(res.msg)
+			}
+		},'json')
+	})
 </script>
-
+@endsection

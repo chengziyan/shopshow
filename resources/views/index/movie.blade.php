@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <td><button>01</button></td>
+        <td><button>02</button></td>
+        <td><button>03</button></td>
+        <td><button>04</button></td>
+        <td><button>05</button></td>
+        <td><button>06</button></td>
+    </tr>
+    <tr>
+        <td><button>07</button></td>
+        <td><button>08</button></td>
+        <td><button>09</button></td>
+        <td><button>10</button></td>
+        <td><button>11</button></td>
+        <td><button>12</button></td>
+    </tr>
+    <tr>
+        <td><button>13</button></td>
+        <td><button>14</button></td>
+        <td><button>15</button></td>
+        <td><button>16</button></td>
+        <td><button>17</button></td>
+        <td><button>18</button></td>
+    </tr>
+</table>

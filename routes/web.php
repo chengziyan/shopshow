@@ -32,3 +32,7 @@ Route::get('/pay/{id}','Index\EmentController@pay');//结算
 Route::get('/getsonaddress','Index\EmentController@getsonaddress');//结算
 Route::get('/useraddressadd','Index\EmentController@useraddressadd');//结算
 Route::any('/order','Index\EmentController@order');//结算
+Route::any('/collect','Index\EmentController@collect');//收藏
+Route::get('/prize','Index\PrizeController@add');   //抽奖
+Route::get('/prize/start','Index\PrizeController@start');   //开始抽奖
+Route::get('/movie/index','Index\PrizeController@mvindex');   //电影订票系统
